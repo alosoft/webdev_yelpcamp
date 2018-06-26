@@ -59,4 +59,10 @@ middleObj.isLoggedIn = function (req, res, next) {
 };
 
 
+
+
+
+
+
+
 module.exports = middleObj;
