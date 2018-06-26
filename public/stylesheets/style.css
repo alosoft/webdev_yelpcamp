@@ -1,0 +1,19 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+#uni {
+    padding: 3px;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#form {
+    display: inline;
+}
