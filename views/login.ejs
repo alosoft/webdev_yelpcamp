@@ -1,24 +1,8 @@
-<% // include ./partials/header   %>
-
-<!--<h1>Login</h1>-->
-
-<!--<form action="/login" method="POST">-->
-<!--<input type="text" name="username" placeholder="username">-->
-<!--<input type="password" name="password" placeholder="password">-->
-<!--<input type="submit" value="Login">-->
-<!--</form>-->
-
-<% //include ./partials/footer.ejs   %>
 
 
 <!doctype html>
 <html lang="en">
 <head>
-    <!--<meta charset="utf-8">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-    <!--<meta name="description" content="">-->
-    <!--<meta name="author" content="">-->
-    <!--<link rel="icon" href="../../../../favicon.ico">-->
 
     <title>Yelp Camp</title>
     <meta name="viewport" content="width=device-width,initial scale=1">
@@ -26,9 +10,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/mobile.css">
     <link rel="stylesheet" href="/stylesheets/web-fonts-with-css/css/fontawesome-all.css">
-    <!-- Bootstrap core CSS -->
-    <!--<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">-->
 
 
     <style>
@@ -89,6 +70,17 @@
 
 <body class="text-center">
 <form class="form-signin" action="/login" method="POST">
+
+    <% if(error && error.length > 0){ %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+        <%= success %>
+    </div>
+    <% } %>
     <img class="mb-4" src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72"
          height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>

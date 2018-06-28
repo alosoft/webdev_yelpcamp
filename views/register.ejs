@@ -1,35 +1,15 @@
-<% // include ./partials/header   %>
-
-<!--<h1>Sign Up</h1>-->
-
-<!--<form action="/register" method="POST">-->
-<!--<input type="text" name="username" placeholder="username">-->
-<!--<input type="password" name="password" placeholder="password">-->
-<!--<button>Submit</button>-->
-<!--</form>-->
-
-<% //include ./partials/footer   %>
-
 
 <!doctype html>
 <html lang="en">
 <head>
-    <!--<meta charset="utf-8">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-    <!--<meta name="description" content="">-->
-    <!--<meta name="author" content="">-->
-    <!--<link rel="icon" href="../../../../favicon.ico">-->
 
     <title>Yelp Camp</title>
 
-    <!-- Bootstrap core CSS -->
-    <!--<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
     <meta name="viewport" content="width=device-width,initial scale=1">
     <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="/stylesheets/mobile.css">
     <link rel="stylesheet" href="/stylesheets/web-fonts-with-css/css/fontawesome-all.css">
-
 
     <style>
         html,
@@ -83,12 +63,20 @@
         }
     </style>
 
-    <!-- Custom styles for this template -->
-    <!--<link href="signin.css" rel="stylesheet">-->
 </head>
 
 <body class="text-center">
 <form class="form-signin" action="/register" method="POST">
+    <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+    <% } %>
+    <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+        <%= success %>
+    </div>
+    <% } %>
     <img class="mb-4" src="https://getbootstrap.com/docs/4.1/assets/brand/bootstrap-solid.svg" alt="" width="72"
          height="72">
     <h1 class="h3 mb-3 font-weight-normal">Register</h1>
@@ -96,11 +84,6 @@
     <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
-    <!--<div class="checkbox mb-3">-->
-    <!--<label>-->
-    <!--<input type="checkbox" value="remember-me"> Remember me-->
-    <!--</label>-->
-    <!--</div>-->
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2018</p>
     <a href="/campgrounds" class="btn btn-secondary btn-sm" role="button" aria-pressed="true">Go Back</a>

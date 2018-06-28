@@ -3,7 +3,6 @@ var passport = require('passport');
 var User = require('../models/user');
 var router = express.Router();
 
-
 console.log('routes index');
 
 //show register form
