@@ -47,11 +47,12 @@
                         Comment</a>
                     <hr>
                 </div>
+                <% let currentDate = new Date().toDateString(); %>
                 <% campground.comments.forEach(function (comment) { %>
                 <div class="row">
                     <div class="col-md-12">
                         <strong><%= comment.author.username %></strong>
-                        <span class="pull-right">10 days ago</span>
+                        <span class="pull-right"><%= currentDate %></span>
                         <p>
                             <%= comment.text %>
                         </p>
